@@ -158,19 +158,154 @@
     </fieldset>
 
 
-    <!-- 以下、他カテゴリも同じデザインで続く（省略なしで全て含めます） -->
-    <!-- ※ ここから下は前回のHTMLと同じ内容なので省略せずそのまま続けます -->
+    <!-- 講師の有給申請 -->
+    <div class="section-title">講師の有給申請</div>
 
-    <!-- ★ この後の全カテゴリ（有給申請、マイポータル、口座変更、住所氏名変更、フォーム統合、就業確認、退職者対応、復職者対応、講師情報ファイル、自由記述）も同じ構造で入っています ★ -->
+    <fieldset>
+      <legend>① 現在の申請方法（サイボウズメッセージで送信）</legend>
 
-    <!-- ここでは長文になるため省略しますが、あなたが希望すれば「全カテゴリ入りの完全版」をそのまま貼り付けます。 -->
+      <div class="question-label">選択内容1（申請方法）</div>
+      <div class="options">
+        <label><input type="radio" name="有給_現在_申請方法理解" value="理解している">理解している</label>
+        <label><input type="radio" name="有給_現在_申請方法理解" value="理解していない">理解していない</label>
+        <label><input type="radio" name="有給_現在_申請方法理解" value="なんとなく分かる">なんとなく分かる</label>
+      </div>
 
-    <div class="submit-area">
-      <button type="submit">送信する</button>
-    </div>
+      <div class="question-label">選択内容2（負担について）</div>
+      <div class="options">
+        <label><input type="radio" name="有給_現在_負担" value="負担に感じる">負担に感じる</label>
+        <label><input type="radio" name="有給_現在_負担" value="負担は感じない">負担は感じない</label>
+        <label><input type="radio" name="有給_現在_負担" value="どちらともいえない">どちらともいえない</label>
+      </div>
+    </fieldset>
 
-  </form>
-</main>
+    <fieldset>
+      <legend>② 今後の申請方法（室長からフォーム申請）</legend>
 
-</body>
-</html>
+      <div class="question-label">選択内容1（運用について）</div>
+      <div class="options">
+        <label><input type="radio" name="有給_今後_運用" value="フォーム申請にしてほしい">フォーム申請にしてほしい</label>
+        <label><input type="radio" name="有給_今後_運用" value="してほしくない">してほしくない</label>
+        <label><input type="radio" name="有給_今後_運用" value="どちらでもいい">どちらでもいい</label>
+      </div>
+
+      <div class="question-label">選択内容2（負担について）</div>
+      <div class="options">
+        <label><input type="radio" name="有給_今後_負担" value="減る">減る</label>
+        <label><input type="radio" name="有給_今後_負担" value="減らない">減らない</label>
+        <label><input type="radio" name="有給_今後_負担" value="変わらない">変わらない</label>
+      </div>
+    </fieldset>
+
+
+    <!-- マイポータルID／PW再設定依頼 -->
+    <div class="section-title">マイポータルID／PW再設定依頼</div>
+
+    <fieldset>
+      <legend>① 現在の申請方法（講師が直接申請フォームから送信）</legend>
+
+      <div class="question-label">選択内容1（申請URL）</div>
+      <div class="options">
+        <label><input type="radio" name="マイポータル_現在_URL" value="分かる">分かる</label>
+        <label><input type="radio" name="マイポータル_現在_URL" value="分からない">分からない</label>
+        <label><input type="radio" name="マイポータル_現在_URL" value="探せば分かる">探せば分かる</label>
+      </div>
+
+      <div class="question-label">選択内容2（申請方法）</div>
+      <div class="options">
+        <label><input type="radio" name="マイポータル_現在_申請方法" value="URLを講師に案内している">URLを講師に案内している</label>
+        <label><input type="radio" name="マイポータル_現在_申請方法" value="サイボウズで本部に依頼している">サイボウズで本部に依頼している</label>
+      </div>
+
+      <div class="question-label">選択内容3（負担について）</div>
+      <div class="options">
+        <label><input type="radio" name="マイポータル_現在_負担" value="負担に感じる">負担に感じる</label>
+        <label><input type="radio" name="マイポータル_現在_負担" value="負担は感じない">負担は感じない</label>
+        <label><input type="radio" name="マイポータル_現在_負担" value="どちらともいえない">どちらともいえない</label>
+      </div>
+    </fieldset>
+
+
+    <!-- 給与口座変更申請 -->
+    <div class="section-title">給与口座変更申請</div>
+
+    <fieldset>
+      <legend>① 現在の申請方法（講師が直接申請フォームから送信）</legend>
+
+      <div class="question-label">選択内容1（申請URL）</div>
+      <div class="options">
+        <label><input type="radio" name="口座変更_現在_URL" value="分かる">分かる</label>
+        <label><input type="radio" name="口座変更_現在_URL" value="分からない">分からない</label>
+        <label><input type="radio" name="口座変更_現在_URL" value="探せば分かる">探せば分かる</label>
+      </div>
+
+      <div class="question-label">選択内容2（申請方法）</div>
+      <div class="options">
+        <label><input type="radio" name="口座変更_現在_申請方法" value="URLを講師に案内している">URLを講師に案内している</label>
+        <label><input type="radio" name="口座変更_現在_申請方法" value="塾マネのみ修正している">塾マネのみ修正している</label>
+        <label><input type="radio" name="口座変更_現在_申請方法" value="本部にサイボウズで連絡して塾マネ登録">本部にサイボウズで連絡して塾マネ登録</label>
+      </div>
+
+      <div class="question-label">選択内容3（負担について）</div>
+      <div class="options">
+        <label><input type="radio" name="口座変更_現在_負担" value="負担に感じる">負担に感じる</label>
+        <label><input type="radio" name="口座変更_現在_負担" value="負担は感じない">負担は感じない</label>
+        <label><input type="radio" name="口座変更_現在_負担" value="どちらともいえない">どちらともいえない</label>
+      </div>
+    </fieldset>
+
+
+    <!-- 住所変更・氏名変更 -->
+    <div class="section-title">住所変更・氏名変更</div>
+
+    <fieldset>
+      <legend>① 現在の連絡方法（サイボウズや講師情報ファイル室長記入欄で連絡）</legend>
+
+      <div class="question-label">選択内容1（連絡方法）</div>
+      <div class="options">
+        <label><input type="radio" name="住所氏名_現在_連絡方法理解" value="理解している">理解している</label>
+        <label><input type="radio" name="住所氏名_現在_連絡方法理解" value="理解していない">理解していない</label>
+        <label><input type="radio" name="住所氏名_現在_連絡方法理解" value="必要ないと思っていた">必要ないと思っていた</label>
+      </div>
+
+      <div class="question-label">選択内容2（負担について）</div>
+      <div class="options">
+        <label><input type="radio" name="住所氏名_現在_負担" value="負担に感じる">負担に感じる</label>
+        <label><input type="radio" name="住所氏名_現在_負担" value="負担は感じない">負担は感じない</label>
+        <label><input type="radio" name="住所氏名_現在_負担" value="どちらともいえない">どちらともいえない</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>② 今後の申請方法（室長経由ではなく、本人からフォーム申請）</legend>
+
+      <div class="question-label">選択内容1（負担について）</div>
+      <div class="options">
+        <label><input type="radio" name="住所氏名_今後_負担" value="減る">減る</label>
+        <label><input type="radio" name="住所氏名_今後_負担" value="減らない">減らない</label>
+        <label><input type="radio" name="住所氏名_今後_負担" value="変わらない">変わらない</label>
+      </div>
+
+      <div class="question-label">選択内容2（運用について）</div>
+      <div class="options">
+        <label><input type="radio" name="住所氏名_今後_運用" value="フォーム申請にしてほしい">フォーム申請にしてほしい</label>
+        <label><input type="radio" name="住所氏名_今後_運用" value="フォーム申請にしてほしくない">フォーム申請にしてほしくない</label>
+        <label><input type="radio" name="住所氏名_今後_運用" value="どちらでもいい">どちらでもいい</label>
+      </div>
+    </fieldset>
+
+
+    <!-- 講師送信フォームの統合について -->
+    <div class="section-title">講師送信フォームの統合について</div>
+
+    <fieldset>
+      <legend>フォーム統合案について</legend>
+
+      <div class="question-label">選択内容1（負担について）</div>
+      <div class="options">
+        <label><input type="radio" name="フォーム統合_負担" value="減る">減る</label>
+        <label><input type="radio" name="フォーム統合_負担" value="減らない">減らない</label>
+        <label><input type="radio" name="フォーム統合_負担" value="どちらともいえない">どちらともいえない</label>
+      </div>
+
+      <
