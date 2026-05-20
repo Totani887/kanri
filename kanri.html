@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>講師関連業務アンケート</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --main-color: #1a73e8;
+      --border-color: #ddd;
+      --bg-light: #f7f9fc;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 20px;
+    }
+    header p {
+      margin: 0;
+      font-size: 13px;
+      color: #666;
+    }
+    main {
+      max-width: 960px;
+      margin: 16px auto 40px;
+      padding: 0 12px;
+    }
+    .intro {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .intro h2 {
+      margin-top: 0;
+      font-size: 16px;
+      border-left: 4px solid var(--main-color);
+      padding-left: 8px;
+    }
+    form {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 18px 18px 24px;
+    }
+    .section {
+      border-top: 1px solid var(--border-color);
+      padding-top: 18px;
+      margin-top: 18px;
+    }
+    .section:first-of-type {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .section-sub {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    fieldset {
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 10px 12px 12px;
+      margin: 10px 0;
+      background: var(--bg-light);
+    }
+    legend {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0 4px;
+    }
+    .question-label {
+      font-size: 13px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .options {
+      margin-left: 4px;
+      font-size: 13px;
+    }
+    .options label {
+      display: inline-block;
+      margin-right: 16px;
+      margin-top: 4px;
+      cursor: pointer;
+    }
+    .options input[type="radio"] {
+      margin-right: 4px;
+    }
+    .note {
+      font-size: 12px;
+      color: #777;
+      margin-top: 4px;
+    }
+    .submit-area {
+      margin-top: 24px;
+      text-align: center;
+    }
+    button[type="submit"] {
+      background: var(--main-color);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 28px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background: #1557b0;
+    }
+    @media (max-width: 600px) {
+      header, main {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .options label {
+        display: block;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>講師関連業務アンケート</h1>
+  <p>講師関連の申請フロー・業務整理に関するアンケートです（室長向け）。</p>
+</header>
+
+<main>
+  <section class="intro">
+    <h2>背景・目的</h2>
+    <p><strong>背景：</strong>講師採用後の各種手続き・連絡業務について、室長を介さずに進められる業務があるのではないかと感じたため。</p>
+    <ul>
+      <li>室長・管理部間でのやり取りや確認作業が多く、業務負担や処理ミス発生の要因となっている。</li>
+    </ul>
+    <p><strong>目的：</strong></p>
+    <ul>
+      <li>室長の負担軽減</li>
+      <li>無駄なやり取りの削減</li>
+      <li>業務の正確性向上</li>
+      <li>申請フローの整理・標準化</li>
+    </ul>
+    <p>室長を介さず対応可能な業務は、順次「本人申請型」へ移行し、フォーム運用と業務ルールを合わせて整備していきます。</p>
+  </section>
+
+  <!-- ★ Apps Script の Web アプリ URL を action に設定してください -->
+  <form method="POST" action="YOUR_APPS_SCRIPT_WEBAPP_URL">
+
+    <!-- 基本情報 -->
+    <div class="section">
+      <div class="section-title">基本情報</div>
+      <div class="section-sub">回答者の所属など、差し支えない範囲でご記入ください。</div>
+
+      <fieldset>
+        <legend>教室名</legend>
+        <input type="text" name="教室名" style="width:100%;max-width:320px;">
+      </fieldset>
+
+      <fieldset>
+        <legend>室長名</legend>
+        <input type="text" name="室長名" style="width:100%;max-width:320px;">
+      </fieldset>
+    </div>
+
+    <!-- 源泉徴収票発行 -->
+    <div class="section">
+      <div class="section-title">源泉徴収票発行</div>
+
+      <fieldset>
+        <legend>① 現在の申請方法（サイボウズメッセージで送信）</legend>
+
+        <div class="question-label">選択内容1（申請方法）</div>
+        <div class="options">
+          <label><input type="radio" name="源泉_現在_申請方法理解" value="理解している">理解している</label>
+          <label><input type="radio" name="源泉_現在_申請方法理解" value="理解していない">理解していない</label>
+          <label><input type="radio" name="源泉_現在_申請方法理解" value="なんとなく分かる">なんとなく分かる</label>
+        </div>
+
+        <div class="question-label">選択内容2（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="源泉_現在_負担" value="負担に感じる">負担に感じる</label>
+          <label><input type="radio" name="源泉_現在_負担" value="負担は感じない">負担は感じない</label>
+          <label><input type="radio" name="源泉_現在_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>② 今後の申請方法（講師が直接申請フォームから送信）</legend>
+
+        <div class="question-label">選択内容1（運用について）</div>
+        <div class="options">
+          <label><input type="radio" name="源泉_今後_運用" value="フォーム申請にしてほしい">フォーム申請にしてほしい</label>
+          <label><input type="radio" name="源泉_今後_運用" value="フォーム申請にしてほしくない">フォーム申請にしてほしくない</label>
+          <label><input type="radio" name="源泉_今後_運用" value="どちらでもいい">どちらでもいい</label>
+        </div>
+
+        <div class="question-label">選択内容2（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="源泉_今後_負担" value="減る">減る</label>
+          <label><input type="radio" name="源泉_今後_負担" value="減らない">減らない</label>
+          <label><input type="radio" name="源泉_今後_負担" value="変わらない">変わらない</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- 講師の有給申請 -->
+    <div class="section">
+      <div class="section-title">講師の有給申請</div>
+
+      <fieldset>
+        <legend>① 現在の申請方法（サイボウズメッセージで送信）</legend>
+
+        <div class="question-label">選択内容1（申請方法）</div>
+        <div class="options">
+          <label><input type="radio" name="有給_現在_申請方法理解" value="理解している">理解している</label>
+          <label><input type="radio" name="有給_現在_申請方法理解" value="理解していない">理解していない</label>
+          <label><input type="radio" name="有給_現在_申請方法理解" value="なんとなく分かる">なんとなく分かる</label>
+        </div>
+
+        <div class="question-label">選択内容2（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="有給_現在_負担" value="負担に感じる">負担に感じる</label>
+          <label><input type="radio" name="有給_現在_負担" value="負担は感じない">負担は感じない</label>
+          <label><input type="radio" name="有給_現在_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>② 今後の申請方法（室長からフォーム申請）</legend>
+
+        <div class="question-label">選択内容1（運用について）</div>
+        <div class="options">
+          <label><input type="radio" name="有給_今後_運用" value="フォーム申請にしてほしい">フォーム申請にしてほしい</label>
+          <label><input type="radio" name="有給_今後_運用" value="してほしくない">してほしくない</label>
+          <label><input type="radio" name="有給_今後_運用" value="どちらでもいい">どちらでもいい</label>
+        </div>
+
+        <div class="question-label">選択内容2（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="有給_今後_負担" value="減る">減る</label>
+          <label><input type="radio" name="有給_今後_負担" value="減らない">減らない</label>
+          <label><input type="radio" name="有給_今後_負担" value="変わらない">変わらない</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- マイポータルID／PW再設定依頼 -->
+    <div class="section">
+      <div class="section-title">マイポータルID／PW再設定依頼</div>
+
+      <fieldset>
+        <legend>① 現在の申請方法（講師が直接申請フォームから送信）</legend>
+
+        <div class="question-label">選択内容1（申請URL）</div>
+        <div class="options">
+          <label><input type="radio" name="マイポータル_現在_URL" value="分かる">分かる</label>
+          <label><input type="radio" name="マイポータル_現在_URL" value="分からない">分からない</label>
+          <label><input type="radio" name="マイポータル_現在_URL" value="探せば分かる">探せば分かる</label>
+        </div>
+
+        <div class="question-label">選択内容2（申請方法）</div>
+        <div class="options">
+          <label><input type="radio" name="マイポータル_現在_申請方法" value="URLを講師に案内している">URLを講師に案内している</label>
+          <label><input type="radio" name="マイポータル_現在_申請方法" value="サイボウズで本部に依頼している">サイボウズで本部に依頼している</label>
+        </div>
+
+        <div class="question-label">選択内容3（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="マイポータル_現在_負担" value="負担に感じる">負担に感じる</label>
+          <label><input type="radio" name="マイポータル_現在_負担" value="負担は感じない">負担は感じない</label>
+          <label><input type="radio" name="マイポータル_現在_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- 給与口座変更申請 -->
+    <div class="section">
+      <div class="section-title">給与口座変更申請</div>
+
+      <fieldset>
+        <legend>① 現在の申請方法（講師が直接申請フォームから送信）</legend>
+
+        <div class="question-label">選択内容1（申請URL）</div>
+        <div class="options">
+          <label><input type="radio" name="口座変更_現在_URL" value="分かる">分かる</label>
+          <label><input type="radio" name="口座変更_現在_URL" value="分からない">分からない</label>
+          <label><input type="radio" name="口座変更_現在_URL" value="探せば分かる">探せば分かる</label>
+        </div>
+
+        <div class="question-label">選択内容2（申請方法）</div>
+        <div class="options">
+          <label><input type="radio" name="口座変更_現在_申請方法" value="URLを講師に案内している">URLを講師に案内している</label>
+          <label><input type="radio" name="口座変更_現在_申請方法" value="塾マネのみ修正している">塾マネのみ修正している</label>
+          <label><input type="radio" name="口座変更_現在_申請方法" value="本部にサイボウズで連絡して塾マネ登録">本部にサイボウズで連絡して塾マネ登録</label>
+        </div>
+
+        <div class="question-label">選択内容3（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="口座変更_現在_負担" value="負担に感じる">負担に感じる</label>
+          <label><input type="radio" name="口座変更_現在_負担" value="負担は感じない">負担は感じない</label>
+          <label><input type="radio" name="口座変更_現在_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- 住所変更・氏名変更 -->
+    <div class="section">
+      <div class="section-title">住所変更・氏名変更</div>
+
+      <fieldset>
+        <legend>① 現在の連絡方法（サイボウズや講師情報ファイル室長記入欄で連絡）</legend>
+
+        <div class="question-label">選択内容1（連絡方法）</div>
+        <div class="options">
+          <label><input type="radio" name="住所氏名_現在_連絡方法理解" value="理解している">理解している</label>
+          <label><input type="radio" name="住所氏名_現在_連絡方法理解" value="理解していない">理解していない</label>
+          <label><input type="radio" name="住所氏名_現在_連絡方法理解" value="必要ないと思っていた">必要ないと思っていた</label>
+        </div>
+
+        <div class="question-label">選択内容2（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="住所氏名_現在_負担" value="負担に感じる">負担に感じる</label>
+          <label><input type="radio" name="住所氏名_現在_負担" value="負担は感じない">負担は感じない</label>
+          <label><input type="radio" name="住所氏名_現在_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>② 今後の申請方法（室長経由ではなく、本人からフォーム申請）</legend>
+
+        <div class="question-label">選択内容1（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="住所氏名_今後_負担" value="減る">減る</label>
+          <label><input type="radio" name="住所氏名_今後_負担" value="減らない">減らない</label>
+          <label><input type="radio" name="住所氏名_今後_負担" value="変わらない">変わらない</label>
+        </div>
+
+        <div class="question-label">選択内容2（運用について）</div>
+        <div class="options">
+          <label><input type="radio" name="住所氏名_今後_運用" value="フォーム申請にしてほしい">フォーム申請にしてほしい</label>
+          <label><input type="radio" name="住所氏名_今後_運用" value="フォーム申請にしてほしくない">フォーム申請にしてほしくない</label>
+          <label><input type="radio" name="住所氏名_今後_運用" value="どちらでもいい">どちらでもいい</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- 講師送信フォームの統合について -->
+    <div class="section">
+      <div class="section-title">講師送信フォームの統合について</div>
+      <div class="section-sub">
+        各申請を個別管理ではなく、1つのフォーム群として整理する方向で検討しています。
+        <div class="note">
+          例：<br>
+          ・入口：講師申請フォーム<br>
+          ・分岐：新規入社手続申請／在籍講師の各種申請（住所変更・氏名変更・給与口座変更・マイポータル関連など）／給与口座申請（新規／変更）
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>フォーム統合案について</legend>
+
+        <div class="question-label">選択内容1（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="フォーム統合_負担" value="減る">減る</label>
+          <label><input type="radio" name="フォーム統合_負担" value="減らない">減らない</label>
+          <label><input type="radio" name="フォーム統合_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+
+        <div class="question-label">選択内容2（運用について）</div>
+        <div class="options">
+          <label><input type="radio" name="フォーム統合_運用" value="フォームを統合してほしい">フォームを統合してほしい</label>
+          <label><input type="radio" name="フォーム統合_運用" value="フォームを統合してほしくない">フォームを統合してほしくない</label>
+          <label><input type="radio" name="フォーム統合_運用" value="どちらでもいい">どちらでもいい</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- 講師就業の確認について -->
+    <div class="section">
+      <div class="section-title">講師就業の確認について</div>
+
+      <fieldset>
+        <legend>① 現在の業務内容（講師就業スプシを確認して支給内容に間違いが無いか確認して事務進捗管理表に〇）</legend>
+
+        <div class="question-label">選択内容1（業務について）</div>
+        <div class="options">
+          <label><input type="radio" name="就業確認_現在_業務理解" value="理解している">理解している</label>
+          <label><input type="radio" name="就業確認_現在_業務理解" value="理解していない">理解していない</label>
+          <label><input type="radio" name="就業確認_現在_業務理解" value="なんとなく理解している">なんとなく理解している</label>
+        </div>
+
+        <div class="question-label">選択内容2（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="就業確認_現在_負担" value="負担に感じる">負担に感じる</label>
+          <label><input type="radio" name="就業確認_現在_負担" value="負担はない">負担はない</label>
+          <label><input type="radio" name="就業確認_現在_負担" value="変わらない">変わらない</label>
+          <label><input type="radio" name="就業確認_現在_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>② 今後の運用について（計算完了の通知のみ）</legend>
+
+        <div class="question-label">選択内容1（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="就業確認_今後_負担" value="減る">減る</label>
+          <label><input type="radio" name="就業確認_今後_負担" value="減らない">減らない</label>
+          <label><input type="radio" name="就業確認_今後_負担" value="変わらない">変わらない</label>
+        </div>
+
+        <div class="question-label">選択内容2（運用について）</div>
+        <div class="options">
+          <label><input type="radio" name="就業確認_今後_運用" value="無くなると困る">無くなると困る</label>
+          <label><input type="radio" name="就業確認_今後_運用" value="困らない">困らない</label>
+          <label><input type="radio" name="就業確認_今後_運用" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- 退職者対応について -->
+    <div class="section">
+      <div class="section-title">退職者対応について</div>
+
+      <fieldset>
+        <legend>① 現在の業務内容（塾マネを退職に変更し、退職日を入れる）</legend>
+
+        <div class="question-label">選択内容1（連絡方法）</div>
+        <div class="options">
+          <label><input type="radio" name="退職_現在_連絡方法理解" value="理解している">理解している</label>
+          <label><input type="radio" name="退職_現在_連絡方法理解" value="理解していない">理解していない</label>
+          <label><input type="radio" name="退職_現在_連絡方法理解" value="必要ないと思っていた">必要ないと思っていた</label>
+        </div>
+
+        <div class="question-label">選択内容2（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="退職_現在_負担" value="負担に感じる">負担に感じる</label>
+          <label><input type="radio" name="退職_現在_負担" value="負担はない">負担はない</label>
+          <label><input type="radio" name="退職_現在_負担" value="変わらない">変わらない</label>
+          <label><input type="radio" name="退職_現在_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>② 今後の運用について（スケジュール登録にて通知）</legend>
+
+        <div class="question-label">選択内容1（登録について）</div>
+        <div class="options">
+          <label><input type="radio" name="退職_今後_登録効果" value="あると忘れずに作業できそう">あると忘れずに作業できそう</label>
+          <label><input type="radio" name="退職_今後_登録効果" value="なくても作業できている">なくても作業できている</label>
+          <label><input type="radio" name="退職_今後_登録効果" value="どちらともいえない">どちらともいえない</label>
+        </div>
+
+        <div class="question-label">選択内容2（登録について）</div>
+        <div class="options">
+          <label><input type="radio" name="退職_今後_登録希望" value="登録してほしくない">登録してほしくない</label>
+          <label><input type="radio" name="退職_今後_登録希望" value="登録してほしい">登録してほしい</label>
+          <label><input type="radio" name="退職_今後_登録希望" value="どちらでもいい">どちらでもいい</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- 復職者対応について -->
+    <div class="section">
+      <div class="section-title">復職者対応について</div>
+
+      <fieldset>
+        <legend>① 現在の連絡方法（サイボウズや講師情報ファイル室長記入欄で連絡）</legend>
+
+        <div class="question-label">選択内容1（業務について）</div>
+        <div class="options">
+          <label><input type="radio" name="復職_現在_業務理解" value="理解している">理解している</label>
+          <label><input type="radio" name="復職_現在_業務理解" value="理解していない">理解していない</label>
+          <label><input type="radio" name="復職_現在_業務理解" value="なんとなく理解している">なんとなく理解している</label>
+          <label><input type="radio" name="復職_現在_業務理解" value="何もしないでいいと思っていた">何もしないでいいと思っていた</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>② 今後の運用について（「2026年〇月分 講師コマ数一覧の登録のお願い」メールに復職者がいる場合はフォロー）</legend>
+
+        <div class="question-label">選択内容1（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="復職_今後_負担" value="負担に感じる">負担に感じる</label>
+          <label><input type="radio" name="復職_今後_負担" value="負担はない">負担はない</label>
+          <label><input type="radio" name="復職_今後_負担" value="変わらない">変わらない</label>
+          <label><input type="radio" name="復職_今後_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- 講師情報ファイルについて -->
+    <div class="section">
+      <div class="section-title">講師情報ファイルについて</div>
+
+      <fieldset>
+        <legend>① 講師の退職や復職など、連絡事項を記載する</legend>
+
+        <div class="question-label">選択内容1（業務について）</div>
+        <div class="options">
+          <label><input type="radio" name="講師情報_現在_業務理解" value="理解している">理解している</label>
+          <label><input type="radio" name="講師情報_現在_業務理解" value="理解していない">理解していない</label>
+          <label><input type="radio" name="講師情報_現在_業務理解" value="なんとなく理解している">なんとなく理解している</label>
+        </div>
+
+        <div class="question-label">選択内容2（記載について）</div>
+        <div class="options">
+          <label><input type="radio" name="講師情報_現在_記載" value="記載している">記載している</label>
+          <label><input type="radio" name="講師情報_現在_記載" value="記載していない">記載していない</label>
+          <label><input type="radio" name="講師情報_現在_記載" value="記載していない（別途連絡している）">記載していない（別途連絡している）</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>② 今後の運用について（室長記載欄での連絡廃止・ただし、年末調整時は一部記載を継続）</legend>
+
+        <div class="question-label">選択内容1（負担について）</div>
+        <div class="options">
+          <label><input type="radio" name="講師情報_今後_負担" value="減る">減る</label>
+          <label><input type="radio" name="講師情報_今後_負担" value="減らない">減らない</label>
+          <label><input type="radio" name="講師情報_今後_負担" value="変わらない">変わらない</label>
+          <label><input type="radio" name="講師情報_今後_負担" value="どちらともいえない">どちらともいえない</label>
+        </div>
+
+        <div class="question-label">選択内容2（運用について）</div>
+        <div class="options">
+          <label><input type="radio" name="講師情報_今後_運用" value="記載できないと困る">記載できないと困る</label>
+          <label><input type="radio" name="講師情報_今後_運用" value="記載できなくても困らない">記載できなくても困らない</label>
+          <label><input type="radio" name="講師情報_今後_運用" value="どちらともいえない">どちらともいえない</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- 自由記述 -->
+    <div class="section">
+      <div class="section-title">自由記述</div>
+      <div class="section-sub">上記以外で、講師関連業務のフロー改善についてご意見・ご要望があればご記入ください。</div>
+      <fieldset>
+        <legend>ご意見・ご要望</legend>
+        <textarea name="自由記述" rows="4" style="width:100%;"></textarea>
+      </fieldset>
+    </div>
+
+    <div class="submit-area">
+      <button type="submit">送信する</button>
+    </div>
+  </form>
+</main>
+</body>
+</html>
