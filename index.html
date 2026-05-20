@@ -102,6 +102,56 @@
   </style>
 </head>
 
+
+ <script>
+
+const GAS_URL = "ここにGASのURL";
+
+document.querySelector("button").addEventListener("click", async () => {
+
+  const data = {
+    gensen_1_1: document.querySelector('input[name="gensen_1_1"]:checked')?.parentNode.textContent.trim(),
+    gensen_1_2: document.querySelector('input[name="gensen_1_2"]:checked')?.parentNode.textContent.trim(),
+
+    gensen_2_1: document.querySelector('input[name="gensen_2_1"]:checked')?.parentNode.textContent.trim(),
+    gensen_2_2: document.querySelector('input[name="gensen_2_2"]:checked')?.parentNode.textContent.trim(),
+
+    paid_1_1: document.querySelector('input[name="paid_1_1"]:checked')?.parentNode.textContent.trim(),
+    paid_1_2: document.querySelector('input[name="paid_1_2"]:checked')?.parentNode.textContent.trim(),
+
+    paid_2_1: document.querySelector('input[name="paid_2_1"]:checked')?.parentNode.textContent.trim(),
+    paid_2_2: document.querySelector('input[name="paid_2_2"]:checked')?.parentNode.textContent.trim(),
+
+    freeText: document.querySelector("textarea").value
+  };
+
+  try {
+
+    const response = await fetch(GAS_URL, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    const result = await response.json();
+
+    if(result.status === "success"){
+      alert("送信しました");
+    } else {
+      alert("送信失敗");
+    }
+
+  } catch(error) {
+    console.error(error);
+    alert("エラーが発生しました");
+  }
+
+});
+
+</script> 
+
 <body>
 
 <div class="container">
