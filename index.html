@@ -1,317 +1,728 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>講師関連業務アンケート</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      font-family: "Noto Sans JP", sans-serif;
-      background:#f5f7fb;
-      margin:0;
-      padding:30px;
-      color:#333;
-    }
+<title>講師関連業務アンケート</title>
 
-    .container{
-      max-width:1000px;
-      margin:auto;
-      background:#fff;
-      padding:40px;
-      border-radius:16px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    }
+<style>
 
-    h1{
-      margin-top:0;
-      font-size:32px;
-      border-bottom:3px solid #4f6df5;
-      padding-bottom:12px;
-      color:#2d3b73;
-    }
+*{
+    box-sizing:border-box;
+}
 
-    h2{
-      margin-top:50px;
-      padding:12px 16px;
-      background:#eef3ff;
-      border-left:6px solid #4f6df5;
-      border-radius:8px;
-      font-size:22px;
-    }
+body{
+    font-family: "Yu Gothic", sans-serif;
+    background:
+    linear-gradient(to bottom,#eef2ff,#f8fafc);
+    margin:0;
+    padding:30px 15px;
+    color:#1f2937;
+    line-height:1.8;
+}
 
-    h3{
-      margin-top:30px;
-      font-size:18px;
-      color:#444;
-    }
+.container{
+    max-width:1050px;
+    margin:auto;
+    background:white;
+    padding:50px;
+    border-radius:24px;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+}
 
-    .question{
-      margin:20px 0;
-      padding:20px;
-      background:#fafafa;
-      border-radius:10px;
-      border:1px solid #ddd;
-    }
+h1{
+    text-align:center;
+    margin-bottom:10px;
+    font-size:36px;
+    color:#111827;
+}
 
-    .question-title{
-      font-weight:bold;
-      margin-bottom:12px;
-    }
+.description{
+    text-align:center;
+    margin-bottom:50px;
+    color:#6b7280;
+    font-size:16px;
+}
 
-    .options label{
-      display:block;
-      margin:8px 0;
-      cursor:pointer;
-    }
+.section{
+    margin-bottom:55px;
+    padding:35px;
+    border-radius:20px;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.04);
+}
 
-    textarea,
-    input[type="text"]{
-      width:100%;
-      padding:12px;
-      border-radius:8px;
-      border:1px solid #ccc;
-      font-size:14px;
-      box-sizing:border-box;
-    }
+.section-title{
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:25px;
+    color:#1e3a8a;
+    padding-bottom:12px;
+    border-bottom:3px solid #dbeafe;
+}
 
-    textarea{
-      min-height:120px;
-      resize:vertical;
-    }
+.question{
+    margin-top:28px;
+    margin-bottom:14px;
+    font-weight:bold;
+    font-size:17px;
+    background:#eff6ff;
+    padding:12px 16px;
+    border-radius:10px;
+    border-left:5px solid #3b82f6;
+}
 
-    button{
-      margin-top:40px;
-      background:#4f6df5;
-      color:#fff;
-      border:none;
-      padding:14px 28px;
-      font-size:16px;
-      border-radius:10px;
-      cursor:pointer;
-    }
+.subtext{
+    background:#f8fafc;
+    border-left:5px solid #94a3b8;
+    padding:18px;
+    margin-bottom:22px;
+    border-radius:10px;
+    white-space:pre-line;
+    color:#475569;
+}
 
-    button:hover{
-      background:#3e58d4;
-    }
+.example-box{
+    background:#eef2ff;
+    padding:22px;
+    border-radius:14px;
+    margin-top:15px;
+    margin-bottom:25px;
+    white-space:pre-line;
+    border:1px solid #c7d2fe;
+}
 
-    .note{
-      background:#fff8df;
-      border:1px solid #f0d777;
-      padding:16px;
-      border-radius:10px;
-      margin-top:20px;
-      line-height:1.8;
-    }
-  </style>
+label{
+    display:block;
+    margin-bottom:12px;
+    padding:14px 16px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.2s;
+    background:white;
+}
+
+label:hover{
+    background:#f3f4f6;
+    border-color:#60a5fa;
+    transform:translateY(-1px);
+}
+
+input[type="radio"]{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+textarea,
+input[type="text"]{
+    width:100%;
+    padding:16px;
+    border:1px solid #cbd5e1;
+    border-radius:12px;
+    font-size:16px;
+    transition:0.2s;
+}
+
+textarea:focus,
+input[type="text"]:focus{
+    outline:none;
+    border-color:#3b82f6;
+    box-shadow:0 0 0 4px rgba(59,130,246,0.15);
+}
+
+button{
+    width:100%;
+    background:
+    linear-gradient(to right,#2563eb,#1d4ed8);
+    color:white;
+    border:none;
+    padding:18px;
+    border-radius:14px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.2s;
+    margin-top:20px;
+}
+
+button:hover{
+    opacity:0.95;
+    transform:translateY(-2px);
+}
+
+.required{
+    color:#dc2626;
+}
+
+.success{
+    text-align:center;
+    font-size:24px;
+    padding:80px 20px;
+    color:#1d4ed8;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.container{
+    padding:25px;
+}
+
+.section{
+    padding:22px;
+}
+
+.section-title{
+    font-size:22px;
+}
+
+h1{
+    font-size:28px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <h1>講師関連業務アンケート</h1>
+<h1>講師関連業務アンケート</h1>
 
-  <p>
-    現在の運用状況や、今後の改善検討の参考とするため、
-    アンケートへのご協力をお願いいたします。
-  </p>
+<div class="description">
+講師関連業務（現在の業務運用・フォーム化・申請フロー整理）に関するアンケートご協力のお願い
+</div>
 
-  <div class="question">
-    <div class="question-title">お名前</div>
+<form id="surveyForm">
 
-    <input
-      type="text"
-      id="user_name"
-      placeholder="お名前を入力してください"
-    >
-  </div>
+<div class="section">
 
-  <!-- 源泉徴収票 -->
-  <h2>源泉徴収票発行</h2>
+<div class="section-title">
+氏名
+</div>
 
-  <div class="question">
-    <div class="question-title">申請方法について</div>
+<input type="text" name="name" required>
 
-    <div class="options">
+</div>
 
-      <label>
-        <input type="radio" name="gensen_1_1" value="理解している">
-        理解している
-      </label>
+<!-- 源泉徴収票 -->
+<div class="section">
 
-      <label>
-        <input type="radio" name="gensen_1_1" value="理解していない">
-        理解していない
-      </label>
+<div class="section-title">
+講師の源泉徴収票発行について
+</div>
 
-      <label>
-        <input type="radio" name="gensen_1_1" value="なんとなく分かる">
-        なんとなく分かる
-      </label>
+<div class="subtext">
+①現在の申請方法
+（サイボウズメッセージにて室長から本部に依頼）
+</div>
 
-    </div>
-  </div>
+<div class="question">
+選択内容1（申請方法）<span class="required">*</span>
+</div>
 
-  <div class="question">
-    <div class="question-title">負担について</div>
+<label><input type="radio" name="tax_understanding" value="理解している" required>理解している</label>
+<label><input type="radio" name="tax_understanding" value="理解していない">理解していない</label>
+<label><input type="radio" name="tax_understanding" value="なんとなく分かる">なんとなく分かる</label>
 
-    <div class="options">
+<div class="question">
+選択内容2（負担について）<span class="required">*</span>
+</div>
 
-      <label>
-        <input type="radio" name="gensen_1_2" value="負担に感じる">
-        負担に感じる
-      </label>
+<label><input type="radio" name="tax_burden" value="負担に感じる" required>負担に感じる</label>
+<label><input type="radio" name="tax_burden" value="負担は感じない">負担は感じない</label>
+<label><input type="radio" name="tax_burden" value="どちらともいえない">どちらともいえない</label>
 
-      <label>
-        <input type="radio" name="gensen_1_2" value="負担は感じない">
-        負担は感じない
-      </label>
+<div class="subtext">
+②今後の申請方法
+（講師が直接申請フォームから連絡）
+</div>
 
-      <label>
-        <input type="radio" name="gensen_1_2" value="どちらともいえない">
-        どちらともいえない
-      </label>
+<div class="question">
+選択内容1（運用について）<span class="required">*</span>
+</div>
 
-    </div>
-  </div>
+<label><input type="radio" name="tax_future_operation" value="フォーム申請にしてほしい" required>フォーム申請にしてほしい</label>
+<label><input type="radio" name="tax_future_operation" value="フォーム申請にしてほしくない">フォーム申請にしてほしくない</label>
+<label><input type="radio" name="tax_future_operation" value="どちらでもいい">どちらでもいい</label>
 
-  <!-- 有給 -->
-  <h2>講師の有給申請</h2>
+<div class="question">
+選択内容2（負担について）<span class="required">*</span>
+</div>
 
-  <div class="question">
-    <div class="question-title">申請方法について</div>
+<label><input type="radio" name="tax_future_burden" value="減る" required>減る</label>
+<label><input type="radio" name="tax_future_burden" value="減らない">減らない</label>
+<label><input type="radio" name="tax_future_burden" value="変わらない">変わらない</label>
 
-    <div class="options">
+</div>
 
-      <label>
-        <input type="radio" name="paid_1_1" value="理解している">
-        理解している
-      </label>
 
-      <label>
-        <input type="radio" name="paid_1_1" value="理解していない">
-        理解していない
-      </label>
+<!-- マイポータル -->
+<div class="section">
 
-      <label>
-        <input type="radio" name="paid_1_1" value="なんとなく分かる">
-        なんとなく分かる
-      </label>
+<div class="section-title">
+マイポータルID／PW再設定依頼
+</div>
 
-    </div>
-  </div>
+<div class="subtext">
+①現在の申請方法
+（講師が直接申請フォームから連絡）
+</div>
 
-  <div class="question">
-    <div class="question-title">負担について</div>
+<div class="question">
+選択内容1（申請用URL）<span class="required">*</span>
+</div>
 
-    <div class="options">
+<label><input type="radio" name="portal_url" value="分かる" required>分かる</label>
+<label><input type="radio" name="portal_url" value="分からない">分からない</label>
+<label><input type="radio" name="portal_url" value="探せば分かる">探せば分かる</label>
 
-      <label>
-        <input type="radio" name="paid_1_2" value="負担に感じる">
-        負担に感じる
-      </label>
+<div class="question">
+選択内容2（申請方法）<span class="required">*</span>
+</div>
 
-      <label>
-        <input type="radio" name="paid_1_2" value="負担は感じない">
-        負担は感じない
-      </label>
+<label><input type="radio" name="portal_method" value="URLを講師に案内している" required>URLを講師に案内している</label>
+<label><input type="radio" name="portal_method" value="サイボウズで本部に依頼している">サイボウズで本部に依頼している</label>
 
-      <label>
-        <input type="radio" name="paid_1_2" value="どちらともいえない">
-        どちらともいえない
-      </label>
+<div class="question">
+選択内容3（負担について）<span class="required">*</span>
+</div>
 
-    </div>
-  </div>
+<label><input type="radio" name="portal_burden" value="負担に感じる" required>負担に感じる</label>
+<label><input type="radio" name="portal_burden" value="負担は感じない">負担は感じない</label>
+<label><input type="radio" name="portal_burden" value="どちらともいえない">どちらともいえない</label>
 
-  <!-- 自由記述 -->
-  <h2>自由記述</h2>
+</div>
 
-  <div class="question">
-    <div class="question-title">ご意見・ご要望</div>
+<!-- 給与口座 -->
+<div class="section">
 
-    <textarea
-      id="freeText"
-      placeholder="自由にご記入ください"
-    ></textarea>
-  </div>
+<div class="section-title">
+給与口座変更申請
+</div>
 
-  <button type="button" id="submitBtn">
-    送信する
-  </button>
+<div class="subtext">
+①現在の申請方法
+（講師が直接申請フォームから連絡）
+</div>
+
+<div class="question">
+選択内容1（申請URL）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="bank_url" value="分かる" required>分かる</label>
+<label><input type="radio" name="bank_url" value="分からない">分からない</label>
+<label><input type="radio" name="bank_url" value="探せば分かる">探せば分かる</label>
+
+<div class="question">
+選択内容2（申請方法）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="bank_method" value="URLを講師に案内している" required>URLを講師に案内している</label>
+<label><input type="radio" name="bank_method" value="塾マネのみ修正している">塾マネのみ修正している</label>
+<label><input type="radio" name="bank_method" value="本部にサイボウズで連絡して塾マネ登録">本部にサイボウズで連絡して塾マネ登録</label>
+
+<div class="question">
+選択内容3（負担について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="bank_burden" value="負担に感じる" required>負担に感じる</label>
+<label><input type="radio" name="bank_burden" value="負担は感じない">負担は感じない</label>
+<label><input type="radio" name="bank_burden" value="どちらともいえない">どちらともいえない</label>
+
+</div>
+
+<!-- 住所変更 -->
+<div class="section">
+
+<div class="section-title">
+住所変更・氏名変更
+</div>
+
+<div class="subtext">
+①現在の連絡方法
+（サイボウズメッセージや講師情報ファイル室長記入欄にて連絡）
+</div>
+
+<div class="question">
+選択内容1（連絡方法）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="address_understanding" value="理解している" required>理解している</label>
+<label><input type="radio" name="address_understanding" value="理解していない">理解していない</label>
+<label><input type="radio" name="address_understanding" value="必要ないと思っていた">必要ないと思っていた</label>
+
+<div class="question">
+選択内容2（負担について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="address_burden" value="負担に感じる" required>負担に感じる</label>
+<label><input type="radio" name="address_burden" value="負担は感じない">負担は感じない</label>
+<label><input type="radio" name="address_burden" value="どちらともいえない">どちらともいえない</label>
+
+<div class="subtext">
+②今後の申請方法
+（講師が直接申請フォームから連絡）
+</div>
+
+<div class="question">
+選択内容1（負担について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="address_future_burden" value="減る" required>減る</label>
+<label><input type="radio" name="address_future_burden" value="減らない">減らない</label>
+<label><input type="radio" name="address_future_burden" value="変わらない">変わらない</label>
+
+<div class="question">
+選択内容2（運用について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="address_future_operation" value="フォーム申請にしてほしい" required>フォーム申請にしてほしい</label>
+<label><input type="radio" name="address_future_operation" value="フォーム申請にしてほしくない">フォーム申請にしてほしくない</label>
+<label><input type="radio" name="address_future_operation" value="どちらでもいい">どちらでもいい</label>
+
+</div>
+
+<!-- フォーム統合 -->
+<div class="section">
+
+<div class="section-title">
+講師送信フォームの統合について
+</div>
+
+<div class="subtext">
+①各申請を個別管理ではなく、1つのフォーム群として整理する方向で検討しています。
+
+室長は、講師から何か申請があった時、このURLを案内していただくかたちとなります。
+
+※講師の有休申請に関しては、これまで通り室長経由でサイボウズでのやりとりとなります。
+</div>
+
+<div class="example-box">
+例
+
+入口：
+
+●講師申請フォーム
+
+分岐：
+
+〇新規入社手続申請
+・外国籍確認
+・電話番号
+・メールアドレス
+・その他必要情報
+
+〇在籍講師の各種申請
+・住所変更
+・氏名変更
+・給与口座変更
+・マイポータル関連
+・その他申請
+
+〇給与口座申請（新規／変更）
+</div>
+
+<div class="question">
+選択内容1（負担について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="form_integration_burden" value="減る" required>減る</label>
+<label><input type="radio" name="form_integration_burden" value="減らない">減らない</label>
+<label><input type="radio" name="form_integration_burden" value="どちらともいえない">どちらともいえない</label>
+
+<div class="question">
+選択内容2（運用について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="form_integration_operation" value="フォームを統合してほしい" required>フォームを統合してほしい</label>
+<label><input type="radio" name="form_integration_operation" value="フォームを統合してほしくない">フォームを統合してほしくない</label>
+<label><input type="radio" name="form_integration_operation" value="どちらでもいい">どちらでもいい</label>
+
+</div>
+
+
+<!-- 有給 -->
+<div class="section">
+
+<div class="section-title">
+講師の有給申請
+</div>
+
+<div class="subtext">
+①現在の申請方法
+（サイボウズメッセージで送信）
+</div>
+
+<div class="question">
+選択内容1（申請方法）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="paidleave_understanding" value="理解している" required>理解している</label>
+<label><input type="radio" name="paidleave_understanding" value="理解していない">理解していない</label>
+<label><input type="radio" name="paidleave_understanding" value="なんとなく分かる">なんとなく分かる</label>
+
+<div class="question">
+選択内容2（負担について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="paidleave_burden" value="負担に感じる" required>負担に感じる</label>
+<label><input type="radio" name="paidleave_burden" value="負担は感じない">負担は感じない</label>
+<label><input type="radio" name="paidleave_burden" value="どちらともいえない">どちらともいえない</label>
+
+</div>
+
+<!-- 講師就業確認 -->
+<div class="section">
+
+<div class="section-title">
+講師就業の確認について
+</div>
+
+<div class="subtext">
+①現在の業務内容
+（講師就業スプシを確認して支給内容に間違いが無いか確認して事務進捗管理表に〇）
+</div>
+
+<div class="question">
+選択内容1（業務について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="workcheck_understanding" value="理解している" required>理解している</label>
+<label><input type="radio" name="workcheck_understanding" value="理解していない">理解していない</label>
+<label><input type="radio" name="workcheck_understanding" value="なんとなく理解している">なんとなく理解している</label>
+
+<div class="question">
+選択内容2（負担について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="workcheck_burden" value="負担に感じる" required>負担に感じる</label>
+<label><input type="radio" name="workcheck_burden" value="負担は感じない">負担は感じない</label>
+<label><input type="radio" name="workcheck_burden" value="変わらない">変わらない</label>
+<label><input type="radio" name="workcheck_burden" value="どちらともいえない">どちらともいえない</label>
+
+</div>
+
+
+<!-- 退職者対応 -->
+<div class="section">
+
+<div class="section-title">
+退職者対応について
+</div>
+
+<div class="subtext">
+①現在の業務内容
+（塾マネを退職に変更し、退職日を入れる）
+</div>
+
+<div class="question">
+選択内容1（業務について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="retire_understanding" value="理解している" required>理解している</label>
+<label><input type="radio" name="retire_understanding" value="理解していない">理解していない</label>
+<label><input type="radio" name="retire_understanding" value="必要ないと思っていた">必要ないと思っていた</label>
+
+<div class="question">
+選択内容2（業務について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="retire_forget" value="処理は忘れずに行っている" required>処理は忘れずに行っている</label>
+<label><input type="radio" name="retire_forget" value="処理を忘れることがある">処理を忘れることがある</label>
+<label><input type="radio" name="retire_forget" value="たまに忘れる">たまに忘れる</label>
+
+<div class="question">
+選択内容3（負担について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="retire_burden" value="負担に感じる" required>負担に感じる</label>
+<label><input type="radio" name="retire_burden" value="負担は感じない">負担は感じない</label>
+<label><input type="radio" name="retire_burden" value="どちらともいえない">どちらともいえない</label>
+
+<div class="subtext">
+②今後の運用について
+（①について、スケジュール登録にて通知）
+</div>
+
+<div class="question">
+選択内容1（登録について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="retire_future_register" value="あると忘れずに作業できそう" required>あると忘れずに作業できそう</label>
+<label><input type="radio" name="retire_future_register" value="なくても作業できている">なくても作業できている</label>
+<label><input type="radio" name="retire_future_register" value="どちらともいえない">どちらともいえない</label>
+
+<div class="question">
+選択内容2（登録について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="retire_future_notice" value="登録してほしくない" required>登録してほしくない</label>
+<label><input type="radio" name="retire_future_notice" value="登録してほしい">登録してほしい</label>
+<label><input type="radio" name="retire_future_notice" value="どちらともいえない">どちらともいえない</label>
+<label><input type="radio" name="retire_future_notice" value="メールで毎月連絡がほしい">メールで毎月連絡がほしい</label>
+
+</div>
+
+<!-- 復職者対応 -->
+<div class="section">
+
+<div class="section-title">
+復職者対応について
+</div>
+
+<div class="subtext">
+①現在の連絡方法
+（サイボウズや講師情報ファイル室長記入欄で連絡）
+</div>
+
+<div class="question">
+選択内容1（業務について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="return_understanding" value="理解している" required>理解している</label>
+<label><input type="radio" name="return_understanding" value="理解していない">理解していない</label>
+<label><input type="radio" name="return_understanding" value="なんとなく理解している">なんとなく理解している</label>
+<label><input type="radio" name="return_understanding" value="何もしないでいいと思っていた">何もしないでいいと思っていた</label>
+
+<div class="subtext">
+②今後の運用について
+（「2026年〇月分 講師コマ数一覧の登録のお願い」メールに復職者がいる場合はフォロー）
+</div>
+
+<div class="question">
+選択内容1（負担について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="return_future_burden" value="負担に感じる" required>負担に感じる</label>
+<label><input type="radio" name="return_future_burden" value="負担はない">負担はない</label>
+<label><input type="radio" name="return_future_burden" value="変わらない">変わらない</label>
+<label><input type="radio" name="return_future_burden" value="どちらともいえない">どちらともいえない</label>
+
+</div>
+
+<!-- 講師情報ファイル -->
+<div class="section">
+
+<div class="section-title">
+講師情報ファイル（室長記載欄）について
+</div>
+
+<div class="subtext">
+①講師のWワークや復職など、連絡事項を記載する
+</div>
+
+<div class="question">
+選択内容1（業務について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="info_understanding" value="理解している" required>理解している</label>
+<label><input type="radio" name="info_understanding" value="理解していない">理解していない</label>
+<label><input type="radio" name="info_understanding" value="なんとなく理解している">なんとなく理解している</label>
+
+<div class="question">
+選択内容2（記載について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="info_write" value="記載している" required>記載している</label>
+<label><input type="radio" name="info_write" value="記載していない">記載していない</label>
+<label><input type="radio" name="info_write" value="記載していない（別途連絡している）">記載していない（別途連絡している）</label>
+
+<div class="subtext">
+②今後の運用について
+（室長記載欄での連絡廃止・ただし、年末調整時は一部記載を継続）
+</div>
+
+<div class="question">
+選択内容1（負担について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="info_future_burden" value="減る" required>減る</label>
+<label><input type="radio" name="info_future_burden" value="減らない">減らない</label>
+<label><input type="radio" name="info_future_burden" value="変わらない">変わらない</label>
+<label><input type="radio" name="info_future_burden" value="どちらともいえない">どちらともいえない</label>
+
+<div class="question">
+選択内容2（運用について）<span class="required">*</span>
+</div>
+
+<label><input type="radio" name="info_future_operation" value="記載できないと困る" required>記載できないと困る</label>
+<label><input type="radio" name="info_future_operation" value="記載できなくても困らない">記載できなくても困らない</label>
+
+</div>
+
+
+
+
+
+
+
+<!-- 自由記入 -->
+<div class="section">
+
+<div class="section-title">
+自由記入欄
+</div>
+
+<textarea name="free_comment" rows="8"></textarea>
+
+</div>
+
+<button type="submit">送信する</button>
+
+</form>
 
 </div>
 
 <script>
 
-const GAS_URL = "https://script.google.com/macros/s/AKfycbyYyRPj7XGhg74rzdq3Zw6oNNwCjQgEI-g3QFBu6IzrzwZYJXzoFPWnTjHTNmqqau8MOw/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzwjDOMm7kfLPQbPWEF8c_Wc2qhAYDNUHpL3f1-ns8H_lLX6S0JdUkDG1z7w-9n7JSQvg/exec";
 
-document
-  .querySelector("#submitBtn")
-  .addEventListener("click", async () => {
+document.getElementById("surveyForm")
+.addEventListener("submit", async function(e){
 
-    const getRadioValue = (name) => {
-      return document.querySelector(`input[name="${name}"]:checked`)?.value || "";
-    };
+e.preventDefault();
 
-    const data = {
+const formData = new FormData(this);
 
-      name:
-        document.querySelector("#user_name").value,
+const data = {};
 
-      gensen_1_1:
-        getRadioValue("gensen_1_1"),
+formData.forEach((value,key)=>{
+    data[key] = value;
+});
 
-      gensen_1_2:
-        getRadioValue("gensen_1_2"),
+try{
 
-      paid_1_1:
-        getRadioValue("paid_1_1"),
+const response = await fetch(GAS_URL,{
+    method:"POST",
+    body:JSON.stringify(data)
+});
 
-      paid_1_2:
-        getRadioValue("paid_1_2"),
+const result = await response.json();
 
-      freeText:
-        document.querySelector("#freeText").value
+if(result.result === "success"){
 
-    };
+document.querySelector(".container").innerHTML = `
+<div class="success">
+アンケートを送信しました。<br><br>
+ご協力ありがとうございました。
+</div>
+`;
 
-    console.log(data);
+}else{
+    alert("送信に失敗しました");
+}
 
-    try {
-
-      const response = await fetch(GAS_URL, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      });
-
-      const result = await response.json();
-
-      console.log(result);
-
-      if(result.status === "success"){
-
-        alert("送信しました");
-
-        location.reload();
-
-      } else {
-
-        alert("送信に失敗しました");
-
-      }
-
-    } catch(error) {
-
-      console.error(error);
-
-      alert("エラーが発生しました");
-
-    }
+}catch(error){
+    alert("エラーが発生しました");
+}
 
 });
 
